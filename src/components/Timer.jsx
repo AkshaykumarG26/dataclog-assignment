@@ -8,7 +8,8 @@ export const Timer = () => {
 
   const handleChange = (e) => {
     e.preventDefault();
-    setMin(e.target.value);
+    setMin(e.target.value-1);
+    setSec(59)
     
   };
 
@@ -18,7 +19,6 @@ export const Timer = () => {
   }
 
   const startTimer = () => {
-    
       timerId.current = setInterval((s) => {
         setSec((sec) => (sec === 0 ? setSec(59) : sec - 1));
       }, 1000);
@@ -40,15 +40,15 @@ export const Timer = () => {
     clearInterval(timerId.current);
   };
 
+
+  const handleReset = () => {
+      setMin(0)
+      setSec(0)
+  }
+
   return (
     <>
-      <input
-        type="number"
-        name=""
-        id=""
-        placeholder="Enter Time"
-        onChange={handleChange}
-      />
+      <input type="number" placeholder="Enter Time" onChange={handleChange} />
       <h1>Timer</h1>
       <h2>
         {min}:{sec}
@@ -58,6 +58,8 @@ export const Timer = () => {
         <section>
           <button onClick={startTimer}>Start</button>
           <button onClick={stopTimer}>Pause</button>
+          <button onClick={startTimer}>Play</button>
+          <button onClick={handleReset}>Reset</button>
         </section>
       </div>
     </>
