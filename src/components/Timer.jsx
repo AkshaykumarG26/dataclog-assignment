@@ -21,7 +21,7 @@ export const Timer = () => {
   const startTimer = () => {
     timerId.current = setInterval((s) => {
       setSec((sec) => (sec === 0 ? setSec(59) : sec - 1));
-    }, 100);
+    }, 1000);
     return () => clearInterval(timerId.current);
   };
 
