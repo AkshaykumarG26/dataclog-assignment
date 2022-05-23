@@ -1,0 +1,35 @@
+.center {
+    border: 1px solid black;
+    width: 400px;
+    align-items: center;
+    margin: auto;
+    margin-top: 200px;
+    padding: 30px;
+}
+
+button{
+    padding: 5px;
+    margin: 5px;
+    width: 80px;
+    
+}
+
+button:hover{
+    cursor: pointer;
+    color: black;
+    background-color: aliceblue;
+    /* border: none; */
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+    width: 100px;
+    transition: 300ms;
+}
+
+
+input{
+    width: 350px;
+    height: 30px;
+    border: 2px solid;
+    font-size: 16px;
+}
